@@ -19,8 +19,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      name: fpm
+      name: technight-fpm
       port: 9000
       targetPort: 9000
   selector:
-    app: technight-fpm
+    app: technight-php

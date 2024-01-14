@@ -13,6 +13,7 @@ RUN RUN set -eux; \
 FROM larsnieuwenhuizen/nginx-unprivileged:1.21.6 as webserver
 
 COPY --from=backend-compile /var/www/public /var/www/public
+COPY Build/webserver/default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 8080
 
