@@ -1,0 +1,27 @@
+{
+	"name": "PHP",
+	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
+	"features": {
+		"ghcr.io/rio/features/chezmoi:1": {},
+		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {}
+	},
+	"postCreateCommand": ".devcontainer/init.sh",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.profiles.linux": {
+					"zsh": {
+						"path": "/usr/bin/zsh"
+					}
+				}
+			},
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitHub.vscode-github-actions",
+				"foxundermoon.shell-format"
+			]
+		}
+	}
+}
