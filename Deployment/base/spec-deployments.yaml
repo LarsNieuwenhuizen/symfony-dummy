@@ -19,7 +19,7 @@ spec:
       containers:
         - name: technight-webserver
           image: larsnieuwenhuizen/technight-webserver:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
@@ -43,6 +43,6 @@ spec:
       containers:
         - name: technight-php
           image: larsnieuwenhuizen/technight-php:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 9000
