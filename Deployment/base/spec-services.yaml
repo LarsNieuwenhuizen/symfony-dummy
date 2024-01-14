@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: technight-webserver
+spec:
+  ports:
+    - protocol: TCP
+      name: web
+      port: 80
+      targetPort: 8080
+  selector:
+    app: technight-webserver
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: technight-fpm
+spec:
+  ports:
+    - protocol: TCP
+      name: fpm
+      port: 9000
+      targetPort: 9000
+  selector:
+    app: technight-fpm

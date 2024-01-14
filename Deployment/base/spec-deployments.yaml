@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: technight-php
+  labels:
+    app: technight-php
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: technight-php
+  template:
+    metadata:
+      labels:
+        app: technight-php
+    spec:
+      containers:
+        - name: technight-php
+          image: larsnieuwenhuizen/technight-php:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: technight-webserver
+  labels:
+    app: technight-webserver
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: technight-php
+  template:
+    metadata:
+      labels:
+        app: technight-php
+    spec:
+      containers:
+        - name: technight-php
+          image: larsnieuwenhuizen/technight-php:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
