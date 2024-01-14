@@ -21,11 +21,11 @@ USER 101
 # FPM image
 FROM php:8.2-fpm-alpine as fpm
 
-PHP_VERSION=8.2
+ARG PHP_VERSION=8.2
 
 COPY --from=backend-compile /var/www /var/www
-COPY Build/php/php-fpm-pool.con /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
-COPY Build/php/php.ini /etc/php/${PHP_VERSION}/fpm/conf.d/9999-php.ini
+COPY ./Build/php/php-fpm-pool.conf /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
+COPY ./Build/php/php.ini /etc/php/${PHP_VERSION}/fpm/conf.d/9999-php.ini
 
 EXPOSE 9000
 
