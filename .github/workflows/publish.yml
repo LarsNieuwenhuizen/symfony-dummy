@@ -47,4 +47,4 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Docker build and push
-        run: ./build.sh ${{ github.event.pull_request.number }}
+        run: ./build.sh pr-${{ github.event.pull_request.number }}
