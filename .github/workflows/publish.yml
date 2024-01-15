@@ -22,4 +22,6 @@ jobs:
       - name: Docker build and push
         env:
           RUN_NUM: ${{ github.run_number }}
-        run: ./build.sh
+        run: |
+          docker buildx create --use desktop-linux;
+          ./build.sh
