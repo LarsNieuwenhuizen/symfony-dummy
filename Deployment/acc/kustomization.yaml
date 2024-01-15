@@ -4,5 +4,5 @@ resources:
 - ../base
 
 images:
-  - name: larsnieuwenhuizen/fotografie-php
+  - name: larsnieuwenhuizen/technight-php
     newTag: "pr-1"
