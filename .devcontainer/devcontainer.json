@@ -3,7 +3,9 @@
 	"image": "mcr.microsoft.com/devcontainers/php:1-8.2-bullseye",
 	"features": {
 		"ghcr.io/rio/features/chezmoi:1": {},
-		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {}
+		"ghcr.io/shyim/devcontainers-features/symfony-cli:0": {},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/rio/features/kustomize:1": {}
 	},
 	"postCreateCommand": ".devcontainer/init.sh",
 	"customizations": {
