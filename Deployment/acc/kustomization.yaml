@@ -3,6 +3,16 @@ kind: Kustomization
 resources:
 - ../base
 
+
+patches:
+  - target:
+      kind: IngressRoute
+      name: technight-web-route
+    patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`acc.technight.developers.nl`)
+
 images:
   - name: larsnieuwenhuizen/technight-php
     newTag: "pr-1"
