@@ -4,3 +4,4 @@ resources:
 # - spec-namespaces.yaml
 - spec-deployments.yaml
 - spec-services.yaml
+- spec-ingress.yaml
