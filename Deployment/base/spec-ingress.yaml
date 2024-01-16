@@ -1,0 +1,14 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: technight-web-route
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`technight.developers.nl`)
+      kind: Rule
+      services:
+        - name: technight-webserver
+          port: 80
